@@ -1,6 +1,7 @@
 const canvas = document.getElementById('canvas');
-
 const ctx = canvas.getContext('2d');
+const increaseBtn = document.getElementById('increase');
+const decreaseBtn = document.getElementById('decrease');
 
 let size = 20;
 let isPressed = false;
@@ -30,6 +31,21 @@ function drawCircle(x, y) {
     ctx.fill();
 }
 
+increaseBtn.addEventListener('click', () => {
+    size += 5;
+
+    if(size > 5) {
+        size = 50;
+    }
+})
+
+decreaseBtn.addEventListener('click', () => {
+    size -= 5;
+
+    if(size < 5) {
+        size = 50;
+    }  
+})
 
 // function draw() {
 //     ctx.clearRect(0, 0, canvas.width, canvas.height);
